@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <div style="text-align: center">
+    @if (!registerMode) {
+      <h1>Find your match</h1>
+      <p>
+        Come in to view your matches... all you need to do os signup! Your perfect match with our advanced matching
+        algorithm awaits.
+      </p>
+      <p>We use a combination of user preferences, interests, and location to suggest the best matches for you.</p>
+      <div style="text-align: center">
+        <button (click)="toggleRegister()" class="btn btn-primary btn-lg me-2">Register</button>
+        <button class="btn btn-secondary btn-lg me-2">Learn More</button>
+      </div>
+    } @else {
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-6 col-lg-4">
+            <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

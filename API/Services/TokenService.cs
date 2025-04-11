@@ -12,7 +12,7 @@ public class TokenService(IConfiguration config) : ITokenService
 {
     public string CreateToken(AppUser user)
     {
-        var tokenKey = config["TokenKey"] ?? throw new ArgumentNullException("zCanot access tokenkey from appsettings.json");
+        var tokenKey = config["TokenKey"] ?? throw new ArgumentNullException("Cannot access tokenkey from appsettings.json");
         if(tokenKey.Length < 64) throw new ArgumentException("TokenKey must be at least 64 characters long");
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenKey));
 
